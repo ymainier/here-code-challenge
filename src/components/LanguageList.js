@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const RepositoryList = ({
+const LanguageList = ({
   name,
   languageRepartition,
   onBackToRepositoryList
@@ -19,10 +19,10 @@ const RepositoryList = ({
   </div>
 );
 
-RepositoryList.propTypes = {
+LanguageList.propTypes = {
   name: PropTypes.string.isRequired,
   languageRepartition: PropTypes.objectOf(PropTypes.number),
   onBackToRepositoryList: PropTypes.func.isRequired
 };
 
-export default RepositoryList;
+export default LanguageList;

@@ -29,7 +29,7 @@ export function handleRepositoriesError() {
 
 export const fetchRepositories = () => dispatch => {
   dispatch(requestRepositories());
-  axios
+  return axios
     .get("https://api.github.com/users/heremaps/repos")
     .then(result => dispatch(receiveRepositories(result.data)))
     .catch(() => dispatch(handleRepositoriesError()));
@@ -44,8 +44,8 @@ export function requestLanguages() {
 export function receiveLanguages(name, languageRepartition = {}) {
   return {
     type: FETCH_LANGUAGES_SUCCESS,
-    name,
-    languageRepartition
+    languageRepartition: { ...languageRepartition },
+    name
   };
 }
 
@@ -57,7 +57,7 @@ export function handleLanguagesError() {
 
 export const fetchLanguages = name => dispatch => {
   dispatch(requestLanguages());
-  axios
+  return axios
     .get(`https://api.github.com/repos/heremaps/${name}/languages`)
     .then(result => dispatch(receiveLanguages(name, result.data)))
     .catch(() => dispatch(handleLanguagesError()));

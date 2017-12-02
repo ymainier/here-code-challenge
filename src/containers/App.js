@@ -18,7 +18,7 @@ import {
   ERROR
 } from "../states";
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.onSelect = this.onSelect.bind(this);
@@ -46,7 +46,9 @@ class App extends Component {
         {this.props.state === SHOW_REPOSITORY_LIST && (
           <RepositoryList names={this.props.names} onSelect={this.onSelect} />
         )}
-        {this.props.state === LOADING_LANGUAGE_LIST && <LoadingLanguageList />}
+        {this.props.state === LOADING_LANGUAGE_LIST && (
+          <LoadingLanguageList name={this.props.name} />
+        )}
         {this.props.state === SHOW_LANGUAGE_LIST && (
           <LanguageList
             name={this.props.name}
