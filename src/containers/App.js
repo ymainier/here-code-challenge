@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import LoadingRepositoryList from "../components/LoadingRepositoryList";
 import RepositoryList from "../components/RepositoryList";
@@ -60,5 +61,13 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  state: PropTypes.string.isRequired,
+  names: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  name: PropTypes.string.isRequired,
+  languageRepartition: PropTypes.objectOf(PropTypes.number),
+  dispatch: PropTypes.func.isRequired
+};
 
 export default connect(state => state)(App);

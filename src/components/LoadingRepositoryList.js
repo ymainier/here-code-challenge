@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
-const LoadingRepositoryList = () => (
-  <p>Loading repository list</p>
-)
+const LoadingRepositoryList = () => <p>Loading repository list</p>;
 
-export default LoadingRepositoryList
+export default LoadingRepositoryList;

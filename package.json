@@ -15,6 +15,7 @@
   "scripts": {
     "start": "npm run build && serve -o public",
     "build": "webpack",
+    "lint": "eslint 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Yann Mainier",
@@ -25,6 +26,11 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^4.12.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.5.1",
+    "prettier": "^1.8.2",
     "serve": "^6.4.1",
     "webpack": "^3.9.1"
   }
