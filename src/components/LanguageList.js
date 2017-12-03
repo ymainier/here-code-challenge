@@ -13,7 +13,13 @@ const LanguageList = ({
     <ul>
       {Object.keys(languageDistribution).map(language => (
         <li key={language}>
-          {language}: {languageDistribution[language]}
+          <progress
+            max="100"
+            value={Math.ceil(languageDistribution[language])}
+          />
+          <p>
+            {language} {languageDistribution[language]} %
+          </p>
         </li>
       ))}
     </ul>

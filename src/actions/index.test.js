@@ -7,6 +7,23 @@ import MockAdapter from "axios-mock-adapter";
 import * as actions from "./index";
 
 describe("actions", () => {
+  describe("helpers", () => {
+    describe("computeLanguageDistribution", () => {
+      it("should generate an empty object given an empty object", () => {
+        expect(actions.computeLanguageDistribution({})).to.deep.equal({});
+      });
+
+      it("should generate percentage distibution", () => {
+        expect(
+          actions.computeLanguageDistribution({
+            javascript: 40,
+            ruby: 10
+          })
+        ).to.deep.equal({ javascript: 80, ruby: 20 });
+      });
+    });
+  });
+
   describe("synchronous", () => {
     describe("repositories", () => {
       it("should create an action to request repository list", () => {
@@ -44,7 +61,7 @@ describe("actions", () => {
           actions.receiveLanguages(name, languageDistribution)
         ).to.deep.equal({
           type: actions.FETCH_LANGUAGES_SUCCESS,
-          languageDistribution,
+          languageDistribution: { javascript: 21.24, java: 78.76 },
           name
         });
       });
@@ -122,7 +139,7 @@ describe("actions", () => {
             { type: actions.FETCH_LANGUAGES_REQUEST },
             {
               type: actions.FETCH_LANGUAGES_SUCCESS,
-              languageDistribution: { javascript: 123, java: 456 },
+              languageDistribution: { javascript: 21.24, java: 78.76 },
               name
             }
           ]);

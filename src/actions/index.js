@@ -41,10 +41,22 @@ export function requestLanguages() {
   };
 }
 
-export function receiveLanguages(name, languageDistribution = {}) {
+export function computeLanguageDistribution(languageData = {}) {
+  const total = Object.keys(languageData).reduce(
+    (sumSoFar, key) => sumSoFar + languageData[key],
+    0
+  );
+  if (total === 0) return {};
+  return Object.keys(languageData).reduce((objectSoFar, key) => {
+    objectSoFar[key] = Math.round(languageData[key] / total * 10000) / 100;
+    return objectSoFar;
+  }, {});
+}
+
+export function receiveLanguages(name, languageData = {}) {
   return {
     type: FETCH_LANGUAGES_SUCCESS,
-    languageDistribution: { ...languageDistribution },
+    languageDistribution: computeLanguageDistribution(languageData),
     name
   };
 }

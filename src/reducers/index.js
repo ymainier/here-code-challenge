@@ -16,7 +16,14 @@ import {
 } from "../actions";
 
 // TODO : Replace names by repositories
-const rootReducers = (state = {}, actions = {}) => {
+const rootReducers = (
+  state = {
+    state: "",
+    names: [],
+    name: ""
+  },
+  actions = {}
+) => {
   switch (actions.type) {
     case FETCH_REPOSITORIES_REQUEST:
       return {
