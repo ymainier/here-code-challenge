@@ -41,10 +41,10 @@ export function requestLanguages() {
   };
 }
 
-export function receiveLanguages(name, languageRepartition = {}) {
+export function receiveLanguages(name, languageDistribution = {}) {
   return {
     type: FETCH_LANGUAGES_SUCCESS,
-    languageRepartition: { ...languageRepartition },
+    languageDistribution: { ...languageDistribution },
     name
   };
 }

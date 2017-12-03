@@ -39,7 +39,7 @@ const rootReducers = (state = {}, actions = {}) => {
         ...state,
         state: SHOW_LANGUAGE_LIST,
         name: actions.name,
-        languageRepartition: actions.languageRepartition
+        languageDistribution: actions.languageDistribution
       };
     case FETCH_REPOSITORIES_FAILURE:
     case FETCH_LANGUAGES_FAILURE:

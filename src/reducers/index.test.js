@@ -48,13 +48,13 @@ describe("reducers", () => {
         {
           type: actions.FETCH_LANGUAGES_SUCCESS,
           name: "repository",
-          languageRepartition: { javascript: 123, java: 456 }
+          languageDistribution: { javascript: 123, java: 456 }
         }
       )
     ).to.deep.equal({
       state: states.SHOW_LANGUAGE_LIST,
       name: "repository",
-      languageRepartition: { javascript: 123, java: 456 }
+      languageDistribution: { javascript: 123, java: 456 }
     });
   });
 

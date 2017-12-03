@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 
 const LanguageList = ({
   name,
-  languageRepartition,
+  languageDistribution,
   onBackToRepositoryList
 }) => (
   <div>
     <h1>{name}</h1>
     <ul>
-      {Object.keys(languageRepartition).map(language => (
+      {Object.keys(languageDistribution).map(language => (
         <li key={language}>
-          {language}: {languageRepartition[language]}
+          {language}: {languageDistribution[language]}
         </li>
       ))}
     </ul>
@@ -21,7 +21,7 @@ const LanguageList = ({
 
 LanguageList.propTypes = {
   name: PropTypes.string.isRequired,
-  languageRepartition: PropTypes.objectOf(PropTypes.number),
+  languageDistribution: PropTypes.objectOf(PropTypes.number),
   onBackToRepositoryList: PropTypes.func.isRequired
 };
 

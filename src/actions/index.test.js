@@ -39,13 +39,12 @@ describe("actions", () => {
 
       it("should create an action to receive languages used in a repository", () => {
         const name = "repository";
-        // TODO Repartition => Distribution
-        const languageRepartition = { javascript: 123, java: 456 };
+        const languageDistribution = { javascript: 123, java: 456 };
         expect(
-          actions.receiveLanguages(name, languageRepartition)
+          actions.receiveLanguages(name, languageDistribution)
         ).to.deep.equal({
           type: actions.FETCH_LANGUAGES_SUCCESS,
-          languageRepartition,
+          languageDistribution,
           name
         });
       });
@@ -123,7 +122,7 @@ describe("actions", () => {
             { type: actions.FETCH_LANGUAGES_REQUEST },
             {
               type: actions.FETCH_LANGUAGES_SUCCESS,
-              languageRepartition: { javascript: 123, java: 456 },
+              languageDistribution: { javascript: 123, java: 456 },
               name
             }
           ]);

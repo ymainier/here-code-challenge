@@ -52,7 +52,7 @@ export class App extends Component {
         {this.props.state === SHOW_LANGUAGE_LIST && (
           <LanguageList
             name={this.props.name}
-            languageRepartition={this.props.languageRepartition}
+            languageDistribution={this.props.languageDistribution}
             onBackToRepositoryList={this.onBackToRepositoryList}
           />
         )}
@@ -68,7 +68,7 @@ App.propTypes = {
   state: PropTypes.string.isRequired,
   names: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   name: PropTypes.string.isRequired,
-  languageRepartition: PropTypes.objectOf(PropTypes.number),
+  languageDistribution: PropTypes.objectOf(PropTypes.number),
   dispatch: PropTypes.func.isRequired
 };
 
