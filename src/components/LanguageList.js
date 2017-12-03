@@ -6,8 +6,10 @@ const LanguageList = ({
   languageDistribution,
   onBackToRepositoryList
 }) => (
-  <div>
-    <h1>{name}</h1>
+  <div className="language-list">
+    <header>
+      <h1>{name}</h1>
+    </header>
     <ul>
       {Object.keys(languageDistribution).map(language => (
         <li key={language}>
@@ -15,7 +17,11 @@ const LanguageList = ({
         </li>
       ))}
     </ul>
-    <a onClick={onBackToRepositoryList}>Back to repository list</a>
+    <footer>
+      <a className="button" onClick={onBackToRepositoryList}>
+        Back to repository list
+      </a>
+    </footer>
   </div>
 );
 

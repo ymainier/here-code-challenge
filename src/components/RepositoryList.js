@@ -4,8 +4,10 @@ import PropTypes from "prop-types";
 import RepositoryListItem from "./RepositoryListItem";
 
 const RepositoryList = ({ names, onSelect }) => (
-  <div>
-    <h1>All Repositories</h1>
+  <div className="repository-list">
+    <header>
+      <h1>All Repositories</h1>
+    </header>
     <ul>
       {names.map(name => (
         <li key={name}>

@@ -1,0 +1,90 @@
+$font-stack: Helvetica,Arial,sans-serif;
+
+$dark-color: #333;
+$dark-accent-color: #008682;
+$accent-color: #00afaa;
+$border-color: #ccc;
+$bright-color: #fff;
+
+$break: 600px;
+
+html {
+  margin: 0;
+}
+
+body {
+  font: 100% $font-stack;
+  background-color: $bright-color;
+  color: $dark-color;
+  margin: 10px;
+}
+
+.app {
+  max-width: $break;
+  margin: 0 auto;
+
+  h1 {
+    margin: 60px 0 20px;
+    border-bottom: 4px solid $dark-color;
+    @media screen and (max-width: $break) {
+      font-size: 1.5em;
+      background-color: $dark-color;
+      color: $bright-color;
+      margin: -10px -10px 20px;
+      padding: 10px;
+    }
+  }
+
+  .loading {
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .repository-list {
+    li {
+      a {
+        cursor: pointer;
+        width: 100%;
+        display: inline-block;
+        padding: 10px 0;
+        border-bottom: 1px solid $border-color;
+      }
+      &:last-child a {
+        border-bottom: none;
+      }
+      &:active {
+        background-color: $dark-accent-color;
+        color: $bright-color;
+      }
+    }
+  }
+  
+  .language-list {
+    li {
+      margin: 20px 0;
+    }
+  }
+  
+  .button {
+    margin: 20px 0;
+    padding: 1em;
+    color: $bright-color;
+    background-color: $accent-color;
+    cursor: pointer;
+    border-radius: 0.25em;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.125);
+    &:hover, &:focus, &:active {
+      background-color: $dark-accent-color;
+    }
+  }
+  
+  footer {
+    margin: 30px 0;
+  }
+}

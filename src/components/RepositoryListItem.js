@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const RepositoryListItem = ({ name, onSelect }) => (
-  <span onClick={() => onSelect(name)}>{name}</span>
+  <a onClick={() => onSelect(name)}>{name}</a>
 );
 
 RepositoryListItem.propTypes = {

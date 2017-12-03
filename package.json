@@ -14,9 +14,12 @@
   },
   "scripts": {
     "start": "npm run build && serve -o public",
-    "build": "webpack",
+    "build": "run-p build-js build-css",
+    "build-js": "webpack",
+    "build-css": "node-sass src/index.scss > public/style.css",
     "lint": "eslint 'src/**/*.js'",
-    "test": "mocha --require babel-core/register 'src/**/*.test.js'"
+    "unit-test": "mocha --require babel-core/register 'src/**/*.test.js'",
+    "test": "run-p lint unit-test"
   },
   "author": "Yann Mainier",
   "devDependencies": {
@@ -35,6 +38,8 @@
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.5.1",
     "mocha": "^4.0.1",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
     "prettier": "^1.8.2",
     "redux-mock-store": "^1.3.0",
     "serve": "^6.4.1",
